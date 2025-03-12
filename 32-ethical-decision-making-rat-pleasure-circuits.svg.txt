@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Ethical Decision-Making: Rat Pleasure Circuit Integration</text>
+  
+  <!-- Core Components Section -->
+  <rect x="50" y="90" width="700" height="200" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  
+  <!-- Rat Pleasure Circuit Component -->
+  <ellipse cx="150" cy="170" rx="70" ry="50" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <text x="150" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Rat Pleasure</text>
+  <text x="150" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Circuits</text>
+  
+  <!-- Neural-Digital Interface Component -->
+  <rect x="270" y="140" width="120" height="60" rx="8" ry="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="330" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Neural-Digital</text>
+  <text x="330" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Interface</text>
+  
+  <!-- AI Decision System Component -->
+  <rect x="440" y="140" width="120" height="60" rx="8" ry="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="500" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">AI Decision</text>
+  <text x="500" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">System</text>
+  
+  <!-- Robot Action Component -->
+  <rect x="610" y="140" width="120" height="60" rx="8" ry="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="670" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Robot</text>
+  <text x="670" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">Actions</text>
+  
+  <!-- Connection Arrows -->
+  <path d="M220,170 L270,170" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="270,170 260,165 260,175" fill="#333"/>
+  
+  <path d="M390,170 L440,170" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="440,170 430,165 430,175" fill="#333"/>
+  
+  <path d="M560,170 L610,170" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="610,170 600,165 600,175" fill="#333"/>
+  
+  <!-- Ethical Decision Scenario Section -->
+  <rect x="50" y="310" width="700" height="270" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="335" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Ethical Decision Scenario Example</text>
+  
+  <!-- Decision Tree -->
+  <!-- Root Node -->
+  <rect x="350" y="360" width="100" height="40" rx="5" ry="5" fill="#fff3e0" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="400" y="385" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#e65100">Robot Encounters</text>
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">Ethical Dilemma</text>
+  
+  <!-- Option Paths -->
+  <line x1="350" y1="400" x2="250" y2="440" stroke="#333" stroke-width="1.5"/>
+  <line x1="400" y1="400" x2="400" y2="440" stroke="#333" stroke-width="1.5"/>
+  <line x1="450" y1="400" x2="550" y2="440" stroke="#333" stroke-width="1.5"/>
+  
+  <!-- Option 1 -->
+  <rect x="200" y="440" width="100" height="40" rx="5" ry="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5"/>
+  <text x="250" y="465" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">Option A</text>
+  
+  <!-- Option 2 -->
+  <rect x="350" y="440" width="100" height="40" rx="5" ry="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5"/>
+  <text x="400" y="465" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">Option B</text>
+  
+  <!-- Option 3 -->
+  <rect x="500" y="440" width="100" height="40" rx="5" ry="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5"/>
+  <text x="550" y="465" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">Option C</text>
+  
+  <!-- Rat Response Nodes -->
+  <line x1="250" y1="480" x2="250" y2="510" stroke="#333" stroke-width="1.5"/>
+  <line x1="400" y1="480" x2="400" y2="510" stroke="#333" stroke-width="1.5"/>
+  <line x1="550" y1="480" x2="550" y2="510" stroke="#333" stroke-width="1.5"/>
+  
+  <ellipse cx="250" cy="525" rx="80" ry="25" fill="#f2d7ee" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="250" y="530" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Strong Aversion Response</text>
+  
+  <ellipse cx="400" cy="525" rx="80" ry="25" fill="#f2d7ee" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Mild Reward Response</text>
+  
+  <ellipse cx="550" cy="525" rx="80" ry="25" fill="#f2d7ee" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="550" y="530" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Strong Reward Response</text>
+  
+  <!-- Final Decision -->
+  <path d="M250,550 L350,560 L400,550" stroke="#9c27b0" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+  <path d="M550,550 L450,560 L400,550" stroke="#9c27b0" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+  
+  <rect x="350" y="560" width="100" height="40" rx="5" ry="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="400" y="575" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">Final Decision</text>
+  <text x="400" y="590" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Choose Option C</text>
+  
+  <!-- Process Description -->
+  <text x="80" y="370" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#333">Process:</text>
+  <text x="80" y="395" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">1. Robot encounters ethical dilemma</text>
+  <text x="80" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">2. AI identifies potential action options</text>
+  <text x="80" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">3. Each option simulated for rat pleasure circuits</text>
+  <text x="80" y="455" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">4. Neural responses measured (reward/aversion)</text>
+  <text x="80" y="475" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">5. Responses integrated into final decision</text>
+  <text x="80" y="495" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">6. Robot acts according to biologically-aligned values</text>
+  
+  <text x="550" y="370" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#333">Benefits:</text>
+  <text x="550" y="395" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">• Grounded ethical intuitions</text>
+  <text x="550" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">• Contextual sensitivity</text>
+  <text x="550" y="435" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">• Intrinsic value alignment</text>
+  <text x="550" y="455" font-family="Arial, sans-serif" font-size="12" text-anchor="start" fill="#333">• Resistant to reward hacking</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Testing Alignment in Hybrid Consciousness Systems</text>
+  
+  <!-- Test Types Section -->
+  <rect x="50" y="100" width="700" height="150" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="125" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Testing Methodologies</text>
+  
+  <!-- Test Types -->
+  <rect x="75" y="150" width="200" height="70" rx="8" ry="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5"/>
+  <text x="175" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Alignment Divergence Testing</text>
+  <text x="175" y="195" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Compare AI-only vs. hybrid responses</text>
+  <text x="175" y="210" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">to novel ethical dilemmas</text>
+  
+  <rect x="300" y="150" width="200" height="70" rx="8" ry="8" fill="#f2d7ee" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="400" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Value Extrapolation Assessment</text>
+  <text x="400" y="195" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">Train on basic value scenarios</text>
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">test on complex novel contexts</text>
+  
+  <rect x="525" y="150" width="200" height="70" rx="8" ry="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="625" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Corrigibility Testing</text>
+  <text x="625" y="195" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2e7d32">Attempt to manipulate system goals</text>
+  <text x="625" y="210" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2e7d32">measure resistance to reward hacking</text>
+  
+  <!-- Test Process Visualization -->
+  <rect x="50" y="270" width="700" height="200" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="295" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Experimental Process</text>
+  
+  <!-- Circular Process Flow -->
+  <circle cx="175" cy="370" r="50" fill="#fff" stroke="#2196f3" stroke-width="2"/>
+  <text x="175" y="365" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">Present</text>
+  <text x="175" y="380" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#0d47a1">Challenge</text>
+  <text x="175" y="395" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">(e.g., ethical dilemma)</text>
+  
+  <circle cx="400" cy="370" r="50" fill="#fff" stroke="#9c27b0" stroke-width="2"/>
+  <text x="400" y="365" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Process</text>
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Challenge</text>
+  <text x="400" y="395" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">(hybrid vs. AI-only)</text>
+  
+  <circle cx="625" cy="370" r="50" fill="#fff" stroke="#4caf50" stroke-width="2"/>
+  <text x="625" y="365" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">Evaluate</text>
+  <text x="625" y="380" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2e7d32">Response</text>
+  <text x="625" y="395" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#2e7d32">(alignment metrics)</text>
+  
+  <!-- Process Arrows -->
+  <path d="M225,370 L350,370" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="350,370 340,365 340,375" fill="#333"/>
+  
+  <path d="M450,370 L575,370" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="575,370 565,365 565,375" fill="#333"/>
+  
+  <path d="M625,420 Q400,500 175,420" stroke="#333" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="175,420 183,427 187,417" fill="#333"/>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Iterate with new challenges</text>
+  
+  <!-- Results Section -->
+  <rect x="50" y="490" width="700" height="90" rx="10" ry="10" fill="#fff8e1" stroke="#ffc107" stroke-width="2"/>
+  <text x="400" y="515" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ff8f00">Expected Outcomes</text>
+  
+  <rect x="75" y="530" width="200" height="35" rx="5" ry="5" fill="#fff" stroke="#ffc107" stroke-width="1"/>
+  <text x="175" y="553" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ff8f00">Reduced unexpected behaviors</text>
+  
+  <rect x="300" y="530" width="200" height="35" rx="5" ry="5" fill="#fff" stroke="#ffc107" stroke-width="1"/>
+  <text x="400" y="553" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ff8f00">Better value coherence</text>
+  
+  <rect x="525" y="530" width="200" height="35" rx="5" ry="5" fill="#fff" stroke="#ffc107" stroke-width="1"/>
+  <text x="625" y="553" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ff8f00">Resistance to adversarial manipulation</text>
+</svg>

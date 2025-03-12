@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Value Learning through Rat Pleasure Circuit Integration</text>
+  
+  <!-- Main Diagram Box -->
+  <rect x="50" y="80" width="700" height="400" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  
+  <!-- Learning Cycle Visualization - Major Components -->
+  <!-- Rat Pleasure Circuit Component -->
+  <ellipse cx="400" cy="150" rx="80" ry="45" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Rat</text>
+  <text x="400" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Pleasure Circuits</text>
+  
+  <!-- Simple illustration of key areas -->
+  <circle cx="370" cy="150" r="10" fill="#e1bee7" stroke="#9c27b0" stroke-width="1"/>
+  <text x="370" y="153" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#6a1b9a">VTA</text>
+  
+  <circle cx="400" cy="150" r="10" fill="#e1bee7" stroke="#9c27b0" stroke-width="1"/>
+  <text x="400" y="153" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#6a1b9a">NAc</text>
+  
+  <circle cx="430" cy="150" r="10" fill="#e1bee7" stroke="#9c27b0" stroke-width="1"/>
+  <text x="430" y="153" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#6a1b9a">MFB</text>
+  
+  <!-- Neural Recording Component -->
+  <rect x="200" y="250" width="120" height="60" rx="8" ry="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="260" y="275" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Neural</text>
+  <text x="260" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Recording</text>
+  
+  <!-- Value Function Component -->
+  <rect x="480" y="250" width="120" height="60" rx="8" ry="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="540" y="275" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">AI Value</text>
+  <text x="540" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Function</text>
+  
+  <!-- Stimuli/Experience Component -->
+  <rect x="200" y="380" width="120" height="60" rx="8" ry="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="260" y="405" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Stimuli /</text>
+  <text x="260" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Experiences</text>
+  
+  <!-- Robot Behavior Component -->
+  <rect x="480" y="380" width="120" height="60" rx="8" ry="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="540" y="405" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Robot</text>
+  <text x="540" y="425" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">Behavior</text>
+  
+  <!-- Connection Arrows for Value Learning Cycle -->
+  <!-- Stimuli to Rat Pleasure Circuits -->
+  <path d="M260,380 C260,330 330,250 360,195" stroke="#333" stroke-width="1.5" fill="none"/>
+  <polygon points="360,195 352,203 358,210" fill="#333"/>
+  <text x="280" y="300" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Simulated</text>
+  <text x="280" y="315" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">Experiences</text>
+  
+  <!-- Rat Pleasure Circuits to Neural Recording -->
+  <path d="M350,185 C320,200 300,225 275,250" stroke="#9c27b0" stroke-width="1.5" fill="none"/>
+  <polygon points="275,250 278,240 285,247" fill="#9c27b0"/>
+  <text x="300" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Neural</text>
+  <text x="300" y="235" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Response</text>
+  
+  <!-- Neural Recording to Value Function -->
+  <path d="M320,280 L480,280" stroke="#2196f3" stroke-width="1.5" fill="none"/>
+  <polygon points="480,280 470,275 470,285" fill="#2196f3"/>
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Update Value</text>
+  <text x="400" y="285" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Function</text>
+  
+  <!-- Value Function to Robot Behavior -->
+  <path d="M540,310 L540,380" stroke="#2196f3" stroke-width="1.5" fill="none"/>
+  <polygon points="540,380 535,370 545,370" fill="#2196f3"/>
+  <text x="555" y="345" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Guide</text>
+  <text x="555" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Decisions</text>
+  
+  <!-- Robot Behavior to Stimuli/Experience -->
+  <path d="M480,410 L320,410" stroke="#ff9800" stroke-width="1.5" fill="none"/>
+  <polygon points="320,410 330,405 330,415" fill="#ff9800"/>
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">Generate</text>
+  <text x="400" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">New Experiences</text>
+  
+  <!-- Close the Loop - Value Function back to Rat Circuits for further refinement -->
+  <path d="M580,250 C600,220 600,150 480,150" stroke="#4caf50" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="480,150 490,145 490,155" fill="#4caf50"/>
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Refinement</text>
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Cycle</text>
+  
+  <!-- Key Process Steps Box -->
+  <rect x="50" y="500" width="700" height="80" rx="8" ry="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2e7d32">Value Learning Process</text>
+  
+  <text x="100" y="550" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">1. Present simulated experiences to rat pleasure circuits</text>
+  <text x="100" y="570" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">2. Record neural responses (reward/aversion patterns)</text>
+  <text x="450" y="550" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">3. Update AI value function based on biological responses</text>
+  <text x="450" y="570" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">4. Guide robot behavior using biologically-aligned values</text>
+</svg>

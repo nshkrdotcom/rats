@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Homeostatic Balance Control System</text>
+  
+  <!-- Balance Scale -->
+  <line x1="400" y1="150" x2="400" y2="250" stroke="#333" stroke-width="3"/>
+  <line x1="300" y1="250" x2="500" y2="250" stroke="#333" stroke-width="3"/>
+  
+  <!-- Left Balance Pan (Pleasure) -->
+  <path d="M300,250 L280,250 Q250,300 300,325 Q350,300 320,250 Z" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <text x="300" y="290" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Pleasure</text>
+  <text x="300" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">(Reward)</text>
+  
+  <!-- Right Balance Pan (Pain) -->
+  <path d="M500,250 L520,250 Q550,300 500,325 Q450,300 480,250 Z" fill="#ffebee" stroke="#d32f2f" stroke-width="2"/>
+  <text x="500" y="290" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#b71c1c">Pain</text>
+  <text x="500" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#b71c1c">(Safety)</text>
+  
+  <!-- Base -->
+  <rect x="350" y="350" width="100" height="20" rx="5" ry="5" fill="#e0e0e0" stroke="#333" stroke-width="2"/>
+  <rect x="380" y="370" width="40" height="40" rx="5" ry="5" fill="#e0e0e0" stroke="#333" stroke-width="2"/>
+  
+  <!-- Control Panel -->
+  <rect x="150" y="400" width="500" height="150" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Homeostatic Control Panel</text>
+  
+  <!-- Ratio Monitor -->
+  <rect x="175" y="445" width="200" height="80" rx="5" ry="5" fill="#fff8e1" stroke="#ffc107" stroke-width="1.5"/>
+  <text x="275" y="465" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#ff8f00">Pleasure/Pain Ratio</text>
+  <text x="275" y="485" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ff8f00">Target: 0.8 - 2.0</text>
+  <text x="275" y="505" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ff8f00">Safety Alert: >5.0</text>
+  
+  <!-- Circuit Breaker Controls -->
+  <rect x="425" y="445" width="200" height="80" rx="5" ry="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="525" y="465" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2e7d32">Circuit Breakers</text>
+  <text x="525" y="485" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Auto-Trigger @ 8.0</text>
+  <text x="525" y="505" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Hardware + Software</text>
+  
+  <!-- Arrows for Balance Dynamics -->
+  <path d="M300,325 Q300,360 350,360" stroke="#9c27b0" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="350,360 340,355 340,365" fill="#9c27b0"/>
+  
+  <path d="M500,325 Q500,360 450,360" stroke="#d32f2f" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <polygon points="450,360 460,355 460,365" fill="#d32f2f"/>
+  
+  <!-- Connecting Lines to Control Panel -->
+  <path d="M350,380 Q275,390 275,445" stroke="#ffc107" stroke-width="1.5" fill="none"/>
+  <polygon points="275,445 270,435 280,435" fill="#ffc107"/>
+  
+  <path d="M450,380 Q525,390 525,445" stroke="#4caf50" stroke-width="1.5" fill="none"/>
+  <polygon points="525,445 520,435 530,435" fill="#4caf50"/>
+  
+  <!-- Key Receptor Systems -->
+  <g id="receptors">
+    <!-- Pleasure Receptors -->
+    <rect x="50" y="150" width="150" height="150" rx="10" ry="10" fill="#fff" stroke="#9c27b0" stroke-width="2"/>
+    <text x="125" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#6a1b9a">Pleasure Receptors</text>
+    
+    <rect x="70" y="190" width="110" height="25" rx="5" ry="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1"/>
+    <text x="125" y="207" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">Dopamine (D1/D2)</text>
+    
+    <rect x="70" y="220" width="110" height="25" rx="5" ry="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1"/>
+    <text x="125" y="237" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">Opioid (μ, δ, κ)</text>
+    
+    <rect x="70" y="250" width="110" height="25" rx="5" ry="5" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1"/>
+    <text x="125" y="267" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#6a1b9a">Serotonin (5-HT)</text>
+    
+    <!-- Pain Receptors -->
+    <rect x="600" y="150" width="150" height="150" rx="10" ry="10" fill="#fff" stroke="#d32f2f" stroke-width="2"/>
+    <text x="675" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">Pain Receptors</text>
+    
+    <rect x="620" y="190" width="110" height="25" rx="5" ry="5" fill="#ffebee" stroke="#d32f2f" stroke-width="1"/>
+    <text x="675" y="207" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#b71c1c">TRPV1 Channels</text>
+    
+    <rect x="620" y="220" width="110" height="25" rx="5" ry="5" fill="#ffebee" stroke="#d32f2f" stroke-width="1"/>
+    <text x="675" y="237" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#b71c1c">NMDA Receptors</text>
+    
+    <rect x="620" y="250" width="110" height="25" rx="5" ry="5" fill="#ffebee" stroke="#d32f2f" stroke-width="1"/>
+    <text x="675" y="267" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#b71c1c">Substance P (NK1)</text>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <path d="M200,225 L250,250" stroke="#9c27b0" stroke-width="1.5" fill="none"/>
+  <polygon points="250,250 240,243 245,253" fill="#9c27b0"/>
+  
+  <path d="M600,225 L550,250" stroke="#d32f2f" stroke-width="1.5" fill="none"/>
+  <polygon points="550,250 560,243 555,253" fill="#d32f2f"/>
+  
+  <!-- Benefits Box -->
+  <rect x="50" y="320" width="150" height="190" rx="5" ry="5" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5"/>
+  <text x="125" y="345" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">Safety Benefits</text>
+  
+  <circle cx="70" cy="370" r="

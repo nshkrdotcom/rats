@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Implementation Roadmap for Hybrid Consciousness</text>
+  
+  <!-- Timeline Background -->
+  <rect x="100" y="100" width="600" height="400" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  
+  <!-- Timeline Axis -->
+  <line x1="150" y1="450" x2="650" y2="450" stroke="#333" stroke-width="2.5"/>
+  
+  <!-- Timeline Markers -->
+  <line x1="150" y1="445" x2="150" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="150" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 1</text>
+  
+  <line x1="250" y1="445" x2="250" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="250" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 2</text>
+  
+  <line x1="350" y1="445" x2="350" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="350" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 3</text>
+  
+  <line x1="450" y1="445" x2="450" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="450" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 5</text>
+  
+  <line x1="550" y1="445" x2="550" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="550" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 7</text>
+  
+  <line x1="650" y1="445" x2="650" y2="455" stroke="#333" stroke-width="2"/>
+  <text x="650" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Year 10</text>
+  
+  <!-- Phase Labels -->
+  <text x="200" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#9c27b0">Phase 1: Foundational Research</text>
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2196f3">Phase 2: Architecture Development</text>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#4caf50">Phase 3: Applied Systems</text>
+  
+  <!-- Phase Vertical Separators -->
+  <line x1="300" y1="150" x2="300" y2="450" stroke="#333" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="500" y1="150" x2="500" y2="450" stroke="#333" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Phase 1 Milestones -->
+  <circle cx="180" cy="200" r="15" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <line x1="180" y1="215" x2="180" y2="450" stroke="#9c27b0" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="205" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#6a1b9a">Extend BARLI-QM</text>
+  
+  <circle cx="230" cy="250" r="15" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <line x1="230" y1="265" x2="230" y2="450" stroke="#9c27b0" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="255" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#6a1b9a">Improved Interface</text>
+  
+  <circle cx="280" cy="300" r="15" fill="#f2d7ee" stroke="#9c27b0" stroke-width="2"/>
+  <line x1="280" y1="315" x2="280" y2="450" stroke="#9c27b0" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="305" y="305" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#6a1b9a">Proof-of-Concept</text>
+  
+  <!-- Phase 2 Milestones -->
+  <circle cx="350" cy="200" r="15" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <line x1="350" y1="215" x2="350" y2="450" stroke="#2196f3" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="375" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#0d47a1">BVO Architecture</text>
+  
+  <circle cx="400" cy="250" r="15" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <line x1="400" y1="265" x2="400" y2="450" stroke="#2196f3" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="425" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#0d47a1">HDS Architecture</text>
+  
+  <circle cx="450" cy="300" r="15" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <line x1="450" y1="315" x2="450" y2="450" stroke="#2196f3" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="475" y="305" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#0d47a1">ETF Architecture</text>
+  
+  <!-- Phase 3 Milestones -->
+  <circle cx="530" cy="200" r="15" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <line x1="530" y1="215" x2="530" y2="450" stroke="#4caf50" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="555" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">Healthcare Domain</text>
+  
+  <circle cx="580" cy="250" r="15" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <line x1="580" y1="265" x2="580" y2="450" stroke="#4caf50" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="605" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">Governance Framework</text>
+  
+  <circle cx="630" cy="300" r="15" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <line x1="630" y1="315" x2="630" y2="450" stroke="#4caf50" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="655" y="305" font-family="Arial, sans-serif" font-size="14" text-anchor="start" fill="#2e7d32">Robotics Integration</text>
+  
+  <!-- Key Deliverables Box -->
+  <rect x="100" y="510" width="600" height="70" rx="5" ry="5" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="400" y="535" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Key Deliverables</text>
+  
+  <rect x="120" y="550" width="180" height="20" rx="3" ry="3" fill="#f2d7ee" stroke="#9c27b0" stroke-width="1"/>
+  <text x="210" y="565" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Bi-directional interface</text>
+  
+  <rect x="310" y="550" width="180" height="20" rx="3" ry="3" fill="#e3f2fd" stroke="#2196f3" stroke-width="1"/>
+  <text x="400" y="565" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Validated hybrid architectures</text>
+  
+  <rect x="500" y="550" width="180" height="20" rx="3" ry="3" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+  <text x="590" y="565" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">Aligned robotic systems</text>
+</svg>
