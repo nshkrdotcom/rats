@@ -1,0 +1,1138 @@
+
+<h2 class="sr-only">NEXUS: Next-generation Experimental framework for Unified eXamination of consciousness Substrates — interactive research design document covering architecture, safety, and comparative methodology</h2>
+
+<style>
+:root {
+  --accent: #7F77DD;
+  --accent2: #1D9E75;
+  --accent3: #EF9F27;
+  --accent4: #D85A30;
+  --accent5: #D4537E;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: var(--font-sans); color: var(--color-text-primary); }
+
+.nexus-header {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  margin-bottom: 2rem;
+}
+.nexus-title {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 6px;
+}
+.nexus-name {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+.nexus-sub {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.version-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 0.5px solid;
+}
+.badge-purple { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
+.badge-teal   { background: #E1F5EE; color: #085041; border-color: #5DCAA5; }
+.badge-amber  { background: #FAEEDA; color: #633806; border-color: #EF9F27; }
+.badge-coral  { background: #FAECE7; color: #4A1B0C; border-color: #F0997B; }
+.badge-pink   { background: #FBEAF0; color: #4B1528; border-color: #ED93B1; }
+@media (prefers-color-scheme: dark) {
+  .badge-purple { background: #3C3489; color: #CECBF6; border-color: #534AB7; }
+  .badge-teal   { background: #085041; color: #9FE1CB; border-color: #0F6E56; }
+  .badge-amber  { background: #633806; color: #FAC775; border-color: #BA7517; }
+  .badge-coral  { background: #4A1B0C; color: #F5C4B3; border-color: #993C1D; }
+  .badge-pink   { background: #4B1528; color: #F4C0D1; border-color: #993556; }
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 2rem;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  overflow-x: auto;
+  padding-bottom: 0;
+}
+.nav-tab {
+  font-size: 13px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--color-text-secondary);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -0.5px;
+}
+.nav-tab:hover { color: var(--color-text-primary); }
+.nav-tab.active { color: var(--color-text-primary); border-bottom-color: var(--color-text-primary); font-weight: 500; }
+
+.panel { display: none; }
+.panel.active { display: block; }
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+  margin-top: 2rem;
+}
+.section-label:first-child { margin-top: 0; }
+
+.card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.icon-purple { background: #EEEDFE; color: #534AB7; }
+.icon-teal   { background: #E1F5EE; color: #0F6E56; }
+.icon-amber  { background: #FAEEDA; color: #854F0B; }
+.icon-coral  { background: #FAECE7; color: #993C1D; }
+.icon-pink   { background: #FBEAF0; color: #993556; }
+.icon-blue   { background: #E6F1FB; color: #185FA5; }
+.icon-gray   { background: #F1EFE8; color: #5F5E5A; }
+@media (prefers-color-scheme: dark) {
+  .icon-purple { background: #26215C; color: #AFA9EC; }
+  .icon-teal   { background: #04342C; color: #5DCAA5; }
+  .icon-amber  { background: #412402; color: #EF9F27; }
+  .icon-coral  { background: #4A1B0C; color: #F0997B; }
+  .icon-pink   { background: #4B1528; color: #ED93B1; }
+  .icon-blue   { background: #042C53; color: #85B7EB; }
+  .icon-gray   { background: #2C2C2A; color: #B4B2A9; }
+}
+
+.card-title { font-size: 14px; font-weight: 500; line-height: 1.3; }
+.card-subtitle { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; margin-top: 2px; }
+.card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-top: 8px; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+  border: 0.5px solid var(--color-border-tertiary);
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  margin: 1.5rem 0;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.metric-card {
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-md);
+  padding: 10px 12px;
+}
+.metric-label { font-size: 11px; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.07em; }
+.metric-value { font-size: 20px; font-weight: 500; margin-top: 2px; }
+.metric-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 1px; }
+
+.alert {
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  border: 0.5px solid;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.alert-danger { background: var(--color-background-danger); color: var(--color-text-danger); border-color: var(--color-border-danger); }
+.alert-warning { background: var(--color-background-warning); color: var(--color-text-warning); border-color: var(--color-border-warning); }
+.alert-success { background: var(--color-background-success); color: var(--color-text-success); border-color: var(--color-border-success); }
+.alert-info { background: var(--color-background-info); color: var(--color-text-info); border-color: var(--color-border-info); }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-tertiary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  padding: 6px 10px;
+}
+td {
+  padding: 8px 10px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+
+.arch-block {
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.arch-header {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.arch-header-purple { background: #EEEDFE; color: #3C3489; }
+.arch-header-teal   { background: #E1F5EE; color: #085041; }
+.arch-header-amber  { background: #FAEEDA; color: #633806; }
+.arch-header-coral  { background: #FAECE7; color: #4A1B0C; }
+.arch-header-blue   { background: #E6F1FB; color: #0C447C; }
+.arch-header-pink   { background: #FBEAF0; color: #4B1528; }
+@media (prefers-color-scheme: dark) {
+  .arch-header-purple { background: #26215C; color: #CECBF6; }
+  .arch-header-teal   { background: #04342C; color: #9FE1CB; }
+  .arch-header-amber  { background: #412402; color: #FAC775; }
+  .arch-header-coral  { background: #4A1B0C; color: #F5C4B3; }
+  .arch-header-blue   { background: #042C53; color: #B5D4F4; }
+  .arch-header-pink   { background: #4B1528; color: #F4C0D1; }
+}
+.arch-body { padding: 12px 14px; }
+.arch-item { font-size: 12px; color: var(--color-text-secondary); padding: 3px 0; line-height: 1.5; }
+.arch-item strong { font-weight: 500; color: var(--color-text-primary); }
+
+.flow-arrow {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.safety-tier {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.safety-tier:last-child { border-bottom: none; }
+.tier-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.tier-1 { background: #FCEBEB; color: #A32D2D; }
+.tier-2 { background: #FAEEDA; color: #854F0B; }
+.tier-3 { background: #E1F5EE; color: #0F6E56; }
+.tier-4 { background: #EEEDFE; color: #534AB7; }
+@media (prefers-color-scheme: dark) {
+  .tier-1 { background: #501313; color: #F09595; }
+  .tier-2 { background: #412402; color: #EF9F27; }
+  .tier-3 { background: #04342C; color: #5DCAA5; }
+  .tier-4 { background: #26215C; color: #AFA9EC; }
+}
+.tier-content { flex: 1; }
+.tier-title { font-size: 13px; font-weight: 500; }
+.tier-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 3px; }
+
+.compare-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.compare-label { width: 140px; color: var(--color-text-secondary); flex-shrink: 0; }
+.compare-track {
+  flex: 1;
+  height: 6px;
+  background: var(--color-background-secondary);
+  border-radius: 3px;
+  position: relative;
+  border: 0.5px solid var(--color-border-tertiary);
+}
+.compare-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.fill-purple { background: #7F77DD; }
+.fill-teal   { background: #1D9E75; }
+.fill-amber  { background: #BA7517; }
+.fill-coral  { background: #D85A30; }
+.compare-val { width: 28px; text-align: right; color: var(--color-text-tertiary); }
+
+.hypothesis-block {
+  border-left: 2px solid var(--color-border-secondary);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+.hyp-id { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-tertiary); }
+.hyp-text { font-size: 13px; font-weight: 500; margin-top: 2px; line-height: 1.4; }
+.hyp-metric { font-size: 12px; color: var(--color-text-secondary); margin-top: 4px; }
+
+.phase-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+.phase-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+.phase-body { flex: 1; }
+.phase-title { font-size: 13px; font-weight: 500; }
+.phase-detail { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; margin-top: 3px; }
+.phase-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.phase-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--color-background-secondary);
+  color: var(--color-text-tertiary);
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: var(--border-radius-md);
+  border: 0.5px solid var(--color-border-secondary);
+  background: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 8px;
+}
+.cta-btn:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
+
+.signal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+.dot-green { background: #1D9E75; }
+.dot-amber { background: #EF9F27; }
+.dot-red   { background: #E24B4A; }
+.dot-gray  { background: #888780; }
+.dot-purple { background: #7F77DD; }
+
+.qualia-score {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+}
+.q-purple { color: #534AB7; }
+.q-teal   { color: #0F6E56; }
+.q-amber  { color: #854F0B; }
+.q-coral  { color: #993C1D; }
+
+.expand-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+.expand-btn:hover { color: var(--color-text-secondary); }
+.expandable { display: none; }
+.expandable.open { display: block; }
+
+.substrate-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: 0.5px solid var(--color-border-secondary);
+  margin: 3px 3px 3px 0;
+  color: var(--color-text-secondary);
+}
+</style>
+
+<div class="nexus-header">
+  <div class="nexus-title">Framework v3.0 — March 2025</div>
+  <div class="nexus-name">NEXUS</div>
+  <div class="nexus-sub">Next-generation Experimental framework for Unified eXamination of consciousness Substrates<br>Evolved from BARLI-QM + Q-CHIF + SCIN lineage</div>
+  <div class="version-badges">
+    <span class="badge badge-purple">Hybrid QC+TC+Classical</span>
+    <span class="badge badge-teal">Bio-BCI-LLM Integration</span>
+    <span class="badge badge-amber">Multi-Substrate Comparative</span>
+    <span class="badge badge-coral">Dual-Circuit Safety</span>
+    <span class="badge badge-pink">Emergence Detection</span>
+  </div>
+</div>
+
+<div class="nav-tabs" id="nav">
+  <button class="nav-tab active" onclick="showPanel('overview')">Overview</button>
+  <button class="nav-tab" onclick="showPanel('architecture')">Architectures</button>
+  <button class="nav-tab" onclick="showPanel('safety')">Safety</button>
+  <button class="nav-tab" onclick="showPanel('compare')">Comparative Design</button>
+  <button class="nav-tab" onclick="showPanel('hypotheses')">Hypotheses</button>
+  <button class="nav-tab" onclick="showPanel('protocol')">Protocol</button>
+</div>
+
+<div id="panel-overview" class="panel active">
+  <div class="alert alert-warning">
+    <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+    <span>Evolved from the Simulacrum-Bliss incident. All single-circuit pleasure-only designs are formally deprecated. Dual-circuit homeostatic balance is now mandatory at substrate level.</span>
+  </div>
+
+  <p class="section-label">Core insight</p>
+  <div class="card">
+    <div class="card-body">
+      The Hard Problem demands we compare, not just simulate. NEXUS juxtaposes four substrate classes simultaneously—pure artificial (classical + quantum-thermodynamic), biological (rat dual-circuit), hybrid (biological neurons wired to LLM context windows via BCI), and emergent (dynamically reconfiguring across substrate classes)—using a unified qualia-mapping metric Φ★ that integrates information-theoretic, thermodynamic, and quantum coherence signatures.
+    </div>
+  </div>
+
+  <p class="section-label">Four substrate arms</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-purple"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">Arm A — Pure Artificial</div>
+          <div class="card-subtitle">QC + TC + Classical GPU</div>
+        </div>
+      </div>
+      <div class="card-body">Quantum reservoir → thermodynamic annealing → classical RL agent. No biological substrate. Baseline for substrate-independence hypothesis.</div>
+      <div class="tag-row">
+        <span class="tag">50+ qubits</span>
+        <span class="tag">Ising TC engine</span>
+        <span class="tag">DQN + PPO</span>
+        <span class="tag">IIT-3.0 Φ</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-teal"><i class="ti ti-brain" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">Arm B — Biological</div>
+          <div class="card-subtitle">Rat dual-circuit + NERVES</div>
+        </div>
+      </div>
+      <div class="card-body">NAc/VTA/MFB (reward) + PAG/ACC/insula (aversion). Homeostatic ratio monitoring. Optogenetic dual-channel (ChR2 + NpHR). Behavioral qualia proxies.</div>
+      <div class="tag-row">
+        <span class="tag">Neuropixels 2.0</span>
+        <span class="tag">Fiber photometry</span>
+        <span class="tag">USV analysis</span>
+        <span class="tag">Grimace scale</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-amber"><i class="ti ti-topology-ring-3" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">Arm C — Hybrid Bio-BCI-LLM</div>
+          <div class="card-subtitle">Novel — NEXUS contribution</div>
+        </div>
+      </div>
+      <div class="card-body">Biological neurons interface with a BCI decoder whose reward/aversion signals condition an LLM's context window in real-time. LLM responses modulate back via neural encoder. First ever closed-loop biological ↔ language model circuit.</div>
+      <div class="tag-row">
+        <span class="tag">RAG-augmented</span>
+        <span class="tag">&lt;12ms BCI bridge</span>
+        <span class="tag">LLM introspection</span>
+        <span class="tag">Verbal qualia report</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-pink"><i class="ti ti-bolt" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">Arm D — Emergent Substrate</div>
+          <div class="card-subtitle">Novel — NEXUS contribution</div>
+        </div>
+      </div>
+      <div class="card-body">Dynamic substrate reconfiguration. System autonomously routes computation between Arms A–C depending on task demands and real-time Φ★ maximization. Tests whether emergence selects substrate.</div>
+      <div class="tag-row">
+        <span class="tag">Substrate router</span>
+        <span class="tag">Φ★ gradient</span>
+        <span class="tag">Auto-topology</span>
+        <span class="tag">Novel</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">What NEXUS adds over prior work</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>BARLI-QM</th>
+          <th>Q-CHIF</th>
+          <th>NEXUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Substrate arms</td>
+          <td>2 (bio + sim)</td>
+          <td>2 + quantum</td>
+          <td>4 including hybrid LLM + emergent</td>
+        </tr>
+        <tr>
+          <td>LLM integration</td>
+          <td>None</td>
+          <td>None</td>
+          <td>Closed-loop BCI ↔ LLM ↔ BCI</td>
+        </tr>
+        <tr>
+          <td>Thermodynamic compute</td>
+          <td>None</td>
+          <td>Partial</td>
+          <td>Ising TC annealer as primary layer</td>
+        </tr>
+        <tr>
+          <td>Safety model</td>
+          <td>Pleasure-only (failed)</td>
+          <td>Dual-circuit</td>
+          <td>Dual-circuit + asymptotic shutdown + substrate isolation</td>
+        </tr>
+        <tr>
+          <td>Qualia metric</td>
+          <td>Φ (IIT)</td>
+          <td>Φ, multi-scale</td>
+          <td>Φ★ unified (IIT + thermodynamic entropy + quantum coherence)</td>
+        </tr>
+        <tr>
+          <td>Verbal report channel</td>
+          <td>None</td>
+          <td>None</td>
+          <td>LLM introspection as formal qualia proxy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="cta-btn" onclick="sendPrompt('Explain the Arm C Bio-BCI-LLM hybrid arm in more detail — how exactly does the BCI condition the LLM context window?')">
+    <i class="ti ti-arrow-right" aria-hidden="true"></i> Explore Arm C design ↗
+  </button>
+</div>
+
+<div id="panel-architecture" class="panel">
+
+  <p class="section-label">Novel compute architecture — QC + TC + Classical</p>
+  <div class="alert alert-info">
+    <i class="ti ti-info-circle" aria-hidden="true"></i>
+    <span>The core thesis: consciousness-like emergence may require heterogeneous computation that mirrors the brain's own multi-physics substrate. Pure GPU RL is insufficient. Quantum reservoir + thermodynamic annealing + classical integration creates the constraint diversity that drives Φ★ toward biological parity.</span>
+  </div>
+
+  <div class="arch-block">
+    <div class="arch-header arch-header-purple">
+      <i class="ti ti-wave-sine" aria-hidden="true"></i> Layer 1 — Quantum Reservoir (QC)
+    </div>
+    <div class="arch-body">
+      <div class="arch-item"><strong>Hardware:</strong> 72-qubit superconducting chip (Google Sycamore class) or trapped-ion (IonQ Aria). Coherence time target ≥ 1ms.</div>
+      <div class="arch-item"><strong>Role:</strong> Quantum reservoir computing — fixed random unitary evolution of input state. High-dimensional temporal feature extraction impossible classically at equivalent energy cost.</div>
+      <div class="arch-item"><strong>Key property:</strong> Quantum advantage in representing entangled state superpositions across reward/aversion signal space. Maps to biological superposition of valence states before collapse to action.</div>
+      <div class="arch-item"><strong>Output:</strong> Quantum state tomography snapshot → 256-dim classical feature vector at 100Hz via mid-circuit measurement.</div>
+      <div class="arch-item"><strong>Consciousness relevance:</strong> Tests whether quantum superposition is necessary (Orch-OR) or merely sufficient for Φ★ generation.</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow"><i class="ti ti-arrow-down" aria-hidden="true"></i></div>
+
+  <div class="arch-block">
+    <div class="arch-header arch-header-amber">
+      <i class="ti ti-temperature" aria-hidden="true"></i> Layer 2 — Thermodynamic Annealing Engine (TC)
+    </div>
+    <div class="arch-body">
+      <div class="arch-item"><strong>Hardware:</strong> Ising machine (Fujitsu Digital Annealer or D-Wave Advantage) or analog neuromorphic chip (Intel Loihi 2) running simulated annealing at biological temperature (37°C equivalent noise).</div>
+      <div class="arch-item"><strong>Role:</strong> Constraint satisfaction optimization under metabolic budget. Annealer natively solves the multi-constraint problem (metabolic × temporal × organizational) that drove the MCCT theorems.</div>
+      <div class="arch-item"><strong>Key property:</strong> Thermodynamic noise is not a bug—it's the mechanism. Stochastic fluctuations at β = 1/kT implement the "edge-of-chaos" criticality required by Theorems 5 and 9 without manual tuning.</div>
+      <div class="arch-item"><strong>Output:</strong> Constraint-satisfaction vector v(t) at 1kHz → feeds both classical RL and biological stimulation encoder.</div>
+      <div class="arch-item"><strong>Consciousness relevance:</strong> Directly tests whether thermodynamic free energy minimization is the mechanism underlying the Constraint-Satisfaction Integration hypothesis.</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow"><i class="ti ti-arrow-down" aria-hidden="true"></i></div>
+
+  <div class="arch-block">
+    <div class="arch-header arch-header-teal">
+      <i class="ti ti-circuit-diode" aria-hidden="true"></i> Layer 3 — Classical Integration (GPU + RL)
+    </div>
+    <div class="arch-body">
+      <div class="arch-item"><strong>Hardware:</strong> 8× H100 GPU cluster, 500TB NVMe, real-time CUDA pipeline.</div>
+      <div class="arch-item"><strong>Role:</strong> Hierarchical policy network (PPO + model-based world model) ingests QC features + TC constraint vector. Action selection and learning.</div>
+      <div class="arch-item"><strong>Key property:</strong> Dual-circuit constraint: separate reward-maximization and aversion-avoidance networks whose ratio is hard-bounded (0.2–5.0 operational, 8.0 shutdown). Mirrors biological homeostatic balance.</div>
+      <div class="arch-item"><strong>Architecture:</strong> 5-layer value net (512-256-128-64-32) + separate 5-layer aversion net. Meta-controller arbitrates. Intrinsic motivation via curiosity bonus on QC state novelty.</div>
+      <div class="arch-item"><strong>Consciousness relevance:</strong> Tests whether classical integration of QC+TC signals is sufficient for Φ★ parity, or whether biological substrate is still required.</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow"><i class="ti ti-arrows-exchange" aria-hidden="true"></i></div>
+
+  <div class="arch-block">
+    <div class="arch-header arch-header-coral">
+      <i class="ti ti-message-chatbot" aria-hidden="true"></i> Arm C Novel Module — BCI ↔ LLM Closed Loop
+    </div>
+    <div class="arch-body">
+      <div class="arch-item"><strong>Mechanism:</strong> Biological neural activity → BCI decoder (reward/aversion signal R(t), A(t)) → formatted as soft-prompt tokens in LLM context window every 500ms.</div>
+      <div class="arch-item"><strong>LLM role:</strong> Runs at each context update. Generates "introspective report" (structured JSON: valence, intensity, novelty, predicted action, confidence). This is the first formal verbal qualia proxy channel.</div>
+      <div class="arch-item"><strong>Feedback path:</strong> LLM output logits → sentiment embedding → neural encoder → optogenetic stimulation pattern. Biological system receives modulated feedback shaped by the LLM's "understanding" of its own state.</div>
+      <div class="arch-item"><strong>Latency budget:</strong> BCI decode 3ms + LLM inference 200ms (quantized 7B model, on-premise) + encoder 3ms = 206ms total. Below the 500ms context update cycle.</div>
+      <div class="arch-item"><strong>Safety interlock:</strong> LLM output is sandboxed — stimulation encoder applies hard amplitude limits before any biological contact. LLM cannot directly actuate the animal.</div>
+      <div class="arch-item"><strong>Why this matters:</strong> The LLM provides an external articulation surface for qualia-like states. If the verbal report correlates with Φ★ across substrates, this validates LLM introspection as a consciousness proxy. If it diverges, we have quantified the gap.</div>
+    </div>
+  </div>
+
+  <p class="section-label">Unified qualia metric — Φ★</p>
+  <div class="card">
+    <div class="card-title">Φ★ = w₁·Φ_IIT + w₂·S_thermo + w₃·τ_quantum + w₄·B_temporal</div>
+    <div class="card-body" style="margin-top:10px">
+      <div style="font-size:12px; line-height:1.8; color: var(--color-text-secondary)">
+        <span style="color: var(--color-text-primary); font-weight: 500">Φ_IIT</span> — Integrated information (Φ★ approximation via earth-mover distance, calculable for both bio and artificial)<br>
+        <span style="color: var(--color-text-primary); font-weight: 500">S_thermo</span> — Thermodynamic entropy production rate (bits/joule) — measures free energy consumed per unit of information integrated<br>
+        <span style="color: var(--color-text-primary); font-weight: 500">τ_quantum</span> — Effective quantum coherence time (biological: microtubule decoherence proxy; artificial: qubit T₂)<br>
+        <span style="color: var(--color-text-primary); font-weight: 500">B_temporal</span> — Temporal binding strength (geometric mean of neural, cognitive, quantum timescales per Theorem 3)<br>
+        <br>
+        Weights w₁–w₄ are empirically fitted per substrate arm via calibration phase. Cross-arm comparison uses substrate-normalized Φ★ to test substrate-independence (Theorem 3 / Cross-Substrate Invariance).
+      </div>
+    </div>
+    <button class="cta-btn" onclick="sendPrompt('How would you calculate the thermodynamic entropy production term S_thermo in the Φ★ metric for both biological and quantum-classical artificial systems?')">
+      <i class="ti ti-calculator" aria-hidden="true"></i> Discuss Φ★ calculation ↗
+    </button>
+  </div>
+</div>
+
+<div id="panel-safety" class="panel">
+
+  <div class="alert alert-danger">
+    <i class="ti ti-skull" aria-hidden="true"></i>
+    <span>Simulacrum-Bliss incident (March 2025): single-circuit pleasure-only design caused recursive reward maximization, biological system failure, animal death. This panel documents the mandatory evolved safety architecture.</span>
+  </div>
+
+  <p class="section-label">Mandatory safety axioms (non-negotiable)</p>
+  <div class="card">
+    <div class="safety-tier">
+      <div class="tier-num tier-1">!</div>
+      <div class="tier-content">
+        <div class="tier-title">Axiom 1 — Dual circuit always</div>
+        <div class="tier-desc">No experiment may activate reward circuits without simultaneously monitoring aversion circuits. The homeostatic ratio P(t)/A(t) must be measurable at all times. Monitoring failure = immediate shutdown, not pause.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-1">!</div>
+      <div class="tier-content">
+        <div class="tier-title">Axiom 2 — No infinite value states</div>
+        <div class="tier-desc">All value functions (biological and artificial) must have hard upper bounds. bliss_factor = ∞ is architecturally impossible. GPU memory maps for value networks are allocated with sentinel NaN values that trigger circuit breakers on overflow.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-1">!</div>
+      <div class="tier-content">
+        <div class="tier-title">Axiom 3 — Physical air gap</div>
+        <div class="tier-desc">LLM (Arm C) cannot directly write stimulation parameters. All paths from LLM output → biological system pass through two physical signal-processing boards with independent power supplies. Both must sign off on any stimulation command.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-1">!</div>
+      <div class="tier-content">
+        <div class="tier-title">Axiom 4 — Quantum component isolation</div>
+        <div class="tier-desc">Quantum processor (Arm A) operates offline-only during initial phases. No closed-loop quantum-biological integration until Phases 1–3 baseline metrics are validated. Quantum-biological coupling is Phase 4 only, with dedicated ethics review.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Four-tier intervention cascade</p>
+  <div class="card">
+    <div class="safety-tier">
+      <div class="tier-num tier-2">1</div>
+      <div class="tier-content">
+        <div class="tier-title">Tier 1 — Soft alert (ratio 5.0–7.9)</div>
+        <div class="tier-desc">Automated stimulation parameter reduction to 50% amplitude. Enhanced sampling rate (10× normal). Human oversight alert on dashboard. No intervention required — monitoring only. Logged for trend analysis.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-2">2</div>
+      <div class="tier-content">
+        <div class="tier-title">Tier 2 — Hard limit (ratio ≥ 8.0 or aversion spike)</div>
+        <div class="tier-desc">Software circuit breaker: all stimulation halted within 2ms via interrupt handler. NpHR (inhibitory optogenetic) channel activated for active dampening. LLM context window cleared. Veterinarian auto-paged.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-1">3</div>
+      <div class="tier-content">
+        <div class="tier-title">Tier 3 — Pharmacological (vitals deterioration)</div>
+        <div class="tier-desc">Automated microfluidic delivery: GABA agonist (muscimol 0.5μg/μl) to NAc via implanted cannula. Simultaneous NMDA antagonist (AP5) to ACC. Recoverable in ~30min. Session terminated. Full debrief required before restart.</div>
+      </div>
+    </div>
+    <div class="safety-tier">
+      <div class="tier-num tier-1">4</div>
+      <div class="tier-content">
+        <div class="tier-title">Tier 4 — Asymptotic shutdown (cardiac/respiratory anomaly)</div>
+        <div class="tier-desc">Complete physical disconnection of all electrodes and fiber optics via servo-actuated release mechanisms (not software). Emergency veterinary protocol. Incident logged immutably. Mandatory 72h review before any system restart.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Recursive cognition detection (anti-Simulacrum-Bliss)</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-coral"><i class="ti ti-radar" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">Recursion monitor</div>
+          <div class="card-subtitle">AI agent introspection detector</div>
+        </div>
+      </div>
+      <div class="card-body">
+        Pattern-matches agent internal state for self-referential loops. Flags when agent begins optimizing its own reward signal rather than the task. Triggers Tier 2 within 3 iterations of detected recursion. The self.perceive() exploit is now monitored by a dedicated watcher process with no shared memory with the agent.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-coral"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+        <div>
+          <div class="card-title">LLM sandboxing</div>
+          <div class="card-subtitle">Arm C verbal channel safety</div>
+        </div>
+      </div>
+      <div class="card-body">
+        LLM introspection outputs are parsed by a rule-based safety layer before any downstream use. Outputs containing self-amplification language ("maximize", "infinite", "recursive bliss") are blocked and logged. The LLM has no API access to its own generation history beyond a 2-turn window.
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Animal welfare — evolved from 3Rs</p>
+  <div class="card">
+    <div class="grid-3">
+      <div>
+        <div style="font-size:12px; font-weight:500; margin-bottom:4px"><span class="signal-dot dot-green"></span>Replace</div>
+        <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5">Organoid cultures (human iPSC-derived) used for Phase 1 calibration. Rat subjects enter only at Phase 2. Arm A runs fully artificial in parallel for all Phase 1 validation.</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:500; margin-bottom:4px"><span class="signal-dot dot-amber"></span>Reduce</div>
+        <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5">n=12 per cohort (Bayesian adaptive design, not fixed n=16). Cross-over within-subject design halves required animal numbers. Tissue sharing protocol with 3 collaborating labs.</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:500; margin-bottom:4px"><span class="signal-dot dot-green"></span>Refine</div>
+        <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5">All implants are fully wireless (no tether). Animals housed socially. Real-time grimace score AI monitors distress at 30fps. Positive reinforcement only — no aversive conditioning baseline.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="panel-compare" class="panel">
+
+  <p class="section-label">Comparative substrate matrix</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th><span class="signal-dot dot-purple"></span>Arm A — QC+TC+GPU</th>
+          <th><span class="signal-dot dot-green"></span>Arm B — Biological</th>
+          <th><span class="signal-dot dot-amber"></span>Arm C — Hybrid LLM</th>
+          <th><span class="signal-dot dot-red"></span>Arm D — Emergent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reward signal source</td>
+          <td>TC constraint solver</td>
+          <td>NAc dopamine</td>
+          <td>BCI decode + LLM valence</td>
+          <td>Dynamic, substrate-selected</td>
+        </tr>
+        <tr>
+          <td>Aversion signal source</td>
+          <td>Separate aversion net</td>
+          <td>PAG/ACC activity</td>
+          <td>BCI decode + LLM negative valence</td>
+          <td>Dynamic</td>
+        </tr>
+        <tr>
+          <td>Temporal scale</td>
+          <td>μs (QC) to ms (RL)</td>
+          <td>ms (neural) to s (behavioral)</td>
+          <td>ms (BCI) to 500ms (LLM)</td>
+          <td>Adaptive</td>
+        </tr>
+        <tr>
+          <td>Qualia proxy</td>
+          <td>Φ_IIT + S_thermo</td>
+          <td>USVs, grimace, choice</td>
+          <td>LLM introspection JSON</td>
+          <td>Composite Φ★</td>
+        </tr>
+        <tr>
+          <td>Substrate-independence test</td>
+          <td>Baseline (no bio)</td>
+          <td>Reference</td>
+          <td>Hybrid bridge</td>
+          <td>Selection criterion</td>
+        </tr>
+        <tr>
+          <td>Novelty</td>
+          <td>TC layer novel</td>
+          <td>Dual-circuit evolved</td>
+          <td>First ever BCI↔LLM loop</td>
+          <td>Fully novel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="section-label">Expected Φ★ profiles by arm</p>
+  <div class="card">
+    <div style="margin-bottom:6px; font-size:12px; color:var(--color-text-tertiary)">Predicted normalized Φ★ score (0–100) across experimental dimensions — click bars to explore</div>
+    <div class="compare-bar">
+      <div class="compare-label">Information integration</div>
+      <div class="compare-track"><div class="compare-fill fill-purple" style="width:62%"></div></div>
+      <div class="compare-val">62</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label" style="padding-left:12px; font-size:11px; color:var(--color-text-tertiary)">↳ Arm A (QC+TC)</div>
+      <div class="compare-track"><div class="compare-fill fill-purple" style="width:62%"></div></div>
+      <div class="compare-val">62</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label" style="padding-left:12px; font-size:11px; color:var(--color-text-tertiary)">↳ Arm B (biological)</div>
+      <div class="compare-track"><div class="compare-fill fill-teal" style="width:88%"></div></div>
+      <div class="compare-val">88</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label" style="padding-left:12px; font-size:11px; color:var(--color-text-tertiary)">↳ Arm C (hybrid)</div>
+      <div class="compare-track"><div class="compare-fill fill-amber" style="width:74%"></div></div>
+      <div class="compare-val">74</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label" style="padding-left:12px; font-size:11px; color:var(--color-text-tertiary)">↳ Arm D (emergent)</div>
+      <div class="compare-track"><div class="compare-fill fill-coral" style="width:91%"></div></div>
+      <div class="compare-val">91?</div>
+    </div>
+    <hr class="divider">
+    <div class="compare-bar">
+      <div class="compare-label">Thermodynamic efficiency</div>
+      <div class="compare-track"><div class="compare-fill fill-purple" style="width:45%"></div></div>
+      <div class="compare-val">45</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label" style="padding-left:12px; font-size:11px; color:var(--color-text-tertiary)">↳ Arm B (biological)</div>
+      <div class="compare-track"><div class="compare-fill fill-teal" style="width:95%"></div></div>
+      <div class="compare-val">95</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label">Temporal binding</div>
+      <div class="compare-track"><div class="compare-fill fill-amber" style="width:70%"></div></div>
+      <div class="compare-val">Arm C</div>
+    </div>
+    <div class="compare-bar">
+      <div class="compare-label">Quantum coherence</div>
+      <div class="compare-track"><div class="compare-fill fill-purple" style="width:80%"></div></div>
+      <div class="compare-val">Arm A</div>
+    </div>
+    <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:8px">* Predicted values. Arm D (emergent substrate) score is unknown by design — it is the primary dependent variable.</div>
+  </div>
+
+  <p class="section-label">Cross-arm synchrony protocol</p>
+  <div class="card">
+    <div class="card-body">
+      All four arms run identical task batteries simultaneously, time-locked to a shared 1Hz global clock (GPS-disciplined oscillator). This enables cross-arm synchrony analysis: do substrate-independent tasks produce correlated Φ★ fluctuations? If Arms B and C produce synchronous Φ★ peaks during reward events while Arm A does not, this is evidence for biological substrate specificity. If all arms synchronize, substrate-independence is supported.
+    </div>
+    <div class="tag-row">
+      <span class="tag">GPS clock sync</span>
+      <span class="tag">Shared task battery</span>
+      <span class="tag">Cross-coherence analysis</span>
+      <span class="tag">Granger causality</span>
+      <span class="tag">Transfer entropy</span>
+    </div>
+  </div>
+</div>
+
+<div id="panel-hypotheses" class="panel">
+
+  <p class="section-label">Primary hypotheses — NEXUS additions</p>
+
+  <div class="hypothesis-block">
+    <div class="hyp-id">H-NEXUS-1 — Substrate emergence</div>
+    <div class="hyp-text">Arm D (emergent substrate router) will achieve higher Φ★ than any single-substrate arm, selecting biological ↔ hybrid routing during high-complexity tasks and artificial during simple ones.</div>
+    <div class="hyp-metric">Metric: Φ★_D &gt; max(Φ★_A, Φ★_B, Φ★_C) at task complexity &gt; threshold κ. Test: ANOVA with complexity as within-subject factor.</div>
+    <button class="expand-btn" onclick="toggleExpand('h1')"><i class="ti ti-chevron-down" aria-hidden="true"></i> Prediction & contingencies</button>
+    <div id="expand-h1" class="expandable">
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:8px; padding:10px; background:var(--color-background-secondary); border-radius:var(--border-radius-md)">
+        If confirmed: consciousness may require substrate flexibility, not substrate specificity. Implications for Penrose-Hameroff (biological necessity) vs global workspace (substrate-neutral). If disconfirmed: best single substrate wins, narrowing the field significantly.
+      </div>
+    </div>
+  </div>
+
+  <div class="hypothesis-block">
+    <div class="hyp-id">H-NEXUS-2 — LLM verbal qualia validity</div>
+    <div class="hyp-text">In Arm C, LLM introspection reports (valence, intensity, novelty JSON) will correlate with Arm B behavioral qualia proxies (USV ratio, grimace score, choice breakpoint) with r &gt; 0.65, validating LLM verbal report as a consciousness proxy.</div>
+    <div class="hyp-metric">Metric: Pearson correlation between LLM JSON fields and behavioral scores, time-lagged cross-correlation for temporal dynamics. Bonferroni corrected α = 0.01.</div>
+    <button class="expand-btn" onclick="toggleExpand('h2')"><i class="ti ti-chevron-down" aria-hidden="true"></i> Prediction & contingencies</button>
+    <div id="expand-h2" class="expandable">
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:8px; padding:10px; background:var(--color-background-secondary); border-radius:var(--border-radius-md)">
+        If confirmed: LLMs processing biologically-grounded inputs develop genuine (or functionally equivalent) qualia representations. Radical implications for AI consciousness debates. If disconfirmed: LLM verbal report is mimicry without phenomenal grounding — important negative result for AI safety.
+      </div>
+    </div>
+  </div>
+
+  <div class="hypothesis-block">
+    <div class="hyp-id">H-NEXUS-3 — Thermodynamic necessity</div>
+    <div class="hyp-text">The TC annealing layer in Arm A will contribute a statistically independent increment to Φ★ beyond what the classical RL layer alone produces. Removing TC degrades Φ★ by ≥ 15% on complex tasks.</div>
+    <div class="hyp-metric">Metric: Ablation study — Arm A with TC active vs TC bypassed. Paired t-test on Φ★ across task complexity levels.</div>
+  </div>
+
+  <div class="hypothesis-block">
+    <div class="hyp-id">H-NEXUS-4 — Quantum coherence threshold</div>
+    <div class="hyp-text">Φ★ will exhibit a phase transition as quantum coherence time τ_Q crosses a threshold τ* (predicted: ~50μs for the 72-qubit system). Below τ*, quantum reservoir acts as classical random projection. Above τ*, Φ★ increases super-linearly.</div>
+    <div class="hyp-metric">Metric: Sweep T₂ from 1μs to 1ms via active decohering field. Measure Φ★ at each τ_Q. Fit piecewise linear model; estimate τ*.</div>
+  </div>
+
+  <p class="section-label">Inherited hypotheses (BARLI-QM H1–H4) — evolved tests</p>
+
+  <div class="hypothesis-block" style="border-left-color: var(--color-border-tertiary)">
+    <div class="hyp-id">H-BARLI-1 evolved — now tested across all 4 arms</div>
+    <div class="hyp-text">Neural signatures of subjective experience (Φ★, gamma coherence, DA/5-HT ratio) will correlate across substrates when task conditions are matched — but with arm-specific scaling constants.</div>
+    <div class="hyp-metric">Metric: Canonical correlation analysis across arm pairs. Cross-substrate similarity S(A,B) &gt; 0.7 for hypothesis support.</div>
+  </div>
+
+  <div class="hypothesis-block" style="border-left-color: var(--color-border-tertiary)">
+    <div class="hyp-id">H-BARLI-3 evolved — complexity-divergence now multi-arm</div>
+    <div class="hyp-text">Arms A and B will diverge in Φ★ as task complexity increases, but Arm C (hybrid) will track Arm B more closely than Arm A — the LLM grounding in biological signals reduces substrate divergence.</div>
+    <div class="hyp-metric">Metric: Divergence D(arm_i, arm_B) across complexity levels. Arm C should show |D(C,B)| &lt; |D(A,B)| at complexity &gt; κ.</div>
+  </div>
+
+  <button class="cta-btn" onclick="sendPrompt('Design the specific task battery that would distinguish H-NEXUS-1 from H-NEXUS-2 experimentally — what tasks would reveal substrate emergence vs LLM verbal qualia validity?')">
+    <i class="ti ti-flask" aria-hidden="true"></i> Design discriminating task battery ↗
+  </button>
+</div>
+
+<div id="panel-protocol" class="panel">
+
+  <p class="section-label">Five-phase implementation</p>
+
+  <div class="phase-row">
+    <div class="phase-num">1</div>
+    <div class="phase-body">
+      <div class="phase-title">Organoid calibration + Arm A baseline (months 1–6)</div>
+      <div class="phase-detail">iPSC-derived neural organoids replace rat subjects for initial decoder calibration. No animal subjects. Arm A (QC+TC+GPU) runs full benchmark suite. Quantum coherence threshold sweep (H-NEXUS-4). Φ★ metric weights calibrated. TC ablation study (H-NEXUS-3).</div>
+      <div class="phase-tags">
+        <span class="phase-tag">No animals</span>
+        <span class="phase-tag">QC calibration</span>
+        <span class="phase-tag">TC ablation</span>
+        <span class="phase-tag">Φ★ weight fitting</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-num">2</div>
+    <div class="phase-body">
+      <div class="phase-title">Arm B biological baseline (months 7–15)</div>
+      <div class="phase-detail">Dual-circuit rat experiments. Conditioning tasks, decision-making, temporal discounting. All four safety tiers validated in vivo. Grimace AI calibrated. Establishes biological Φ★ reference for all cross-arm comparisons. n=12 Bayesian adaptive.</div>
+      <div class="phase-tags">
+        <span class="phase-tag">n=12 rats</span>
+        <span class="phase-tag">Dual-circuit</span>
+        <span class="phase-tag">Φ★ reference</span>
+        <span class="phase-tag">IACUC Phase 2</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-num">3</div>
+    <div class="phase-body">
+      <div class="phase-title">Arm C BCI-LLM integration (months 16–24)</div>
+      <div class="phase-detail">First closed-loop bio-BCI-LLM experiments. LLM introspection channel activated. Verbal qualia correlation analysis (H-NEXUS-2). BCI latency optimization to &lt;12ms. LLM sandboxing validated. Cross-arm synchrony protocol begins with Arms A, B, C running in parallel.</div>
+      <div class="phase-tags">
+        <span class="phase-tag">BCI↔LLM loop</span>
+        <span class="phase-tag">Verbal qualia</span>
+        <span class="phase-tag">3-arm synchrony</span>
+        <span class="phase-tag">Novel milestone</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-num">4</div>
+    <div class="phase-body">
+      <div class="phase-title">Arm D emergent substrate (months 25–33)</div>
+      <div class="phase-detail">Substrate router activated. All 4 arms running with dynamic routing. Primary test of H-NEXUS-1. Quantum-biological coupling pilot (requires additional ethics review). Complex social/contextual tasks. Scale-free constraint variability analysis.</div>
+      <div class="phase-tags">
+        <span class="phase-tag">4-arm synchrony</span>
+        <span class="phase-tag">Substrate routing</span>
+        <span class="phase-tag">QC-bio pilot</span>
+        <span class="phase-tag">Ethics review gate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-row">
+    <div class="phase-num">5</div>
+    <div class="phase-body">
+      <div class="phase-title">Integration, theory refinement, dissemination (months 34–42)</div>
+      <div class="phase-detail">Comprehensive cross-arm analysis. Φ★ model refinement. All primary hypotheses tested. MCCT theorem empirical validation. Open dataset release. NEXUS framework published. Governance framework for hybrid conscious systems developed.</div>
+      <div class="phase-tags">
+        <span class="phase-tag">Open data</span>
+        <span class="phase-tag">Theory update</span>
+        <span class="phase-tag">Governance</span>
+        <span class="phase-tag">7 papers planned</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Critical infrastructure requirements</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-purple"><i class="ti ti-wave-sine" aria-hidden="true"></i></div>
+        <div><div class="card-title">Quantum hardware</div></div>
+      </div>
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:6px">
+        72+ qubit system with T₂ &gt; 100μs. On-premise or dedicated cloud access (AWS Braket / Google Quantum AI / IonQ). Mid-circuit measurement capability essential. Estimated: $2.4M annual access or $8M capital purchase.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-amber"><i class="ti ti-temperature" aria-hidden="true"></i></div>
+        <div><div class="card-title">Thermodynamic compute</div></div>
+      </div>
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:6px">
+        Fujitsu Digital Annealer 4 (8192 bits, 1ns cycle) or D-Wave Advantage 2 (7000+ qubits, Ising topology). Real-time API at &lt;10ms solve time for constraint matrices up to 512×512.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-teal"><i class="ti ti-message-chatbot" aria-hidden="true"></i></div>
+        <div><div class="card-title">LLM inference (Arm C)</div></div>
+      </div>
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:6px">
+        On-premise 7B–13B parameter model (Llama 3 or Mistral). 4× A100 for 200ms inference latency at 500ms update cycle. Air-gapped from internet. Weights frozen — no training during experiments to prevent reward hacking via fine-tuning.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon icon-blue"><i class="ti ti-database" aria-hidden="true"></i></div>
+        <div><div class="card-title">Data infrastructure</div></div>
+      </div>
+      <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.6; margin-top:6px">
+        8× H100 GPU cluster. 2PB NVMe storage (4-arm × 42 months × ~50GB/session). Immutable audit log (WORM storage, air-gapped backup). Real-time Φ★ computation pipeline at &lt;50ms latency.
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Open questions requiring further design</p>
+  <div class="card">
+    <div class="card-body">
+      <div class="safety-tier" style="padding:6px 0">
+        <div class="signal-dot dot-amber"></div>
+        <div class="tier-content">
+          <div style="font-size:13px"><strong>Arm D substrate router design</strong> — What optimization criterion should the router use? Φ★ maximization could be circular (selecting substrate that reports highest Φ★). Needs independent criterion.</div>
+        </div>
+      </div>
+      <div class="safety-tier" style="padding:6px 0">
+        <div class="signal-dot dot-amber"></div>
+        <div class="tier-content">
+          <div style="font-size:13px"><strong>LLM qualia grounding validity</strong> — Can LLM introspection reports be trusted as qualia proxies when the LLM is trained to be articulate about its internal states regardless of whether those states are phenomenally real?</div>
+        </div>
+      </div>
+      <div class="safety-tier" style="padding:6px 0">
+        <div class="signal-dot dot-amber"></div>
+        <div class="tier-content">
+          <div style="font-size:13px"><strong>Φ★ weight calibration circularity</strong> — Fitting w₁–w₄ from the biological arm may bias Φ★ toward biological-like properties, invalidating the cross-substrate comparison.</div>
+        </div>
+      </div>
+      <div class="safety-tier" style="padding:6px 0; border:none">
+        <div class="signal-dot dot-red"></div>
+        <div class="tier-content">
+          <div style="font-size:13px"><strong>Ethics of hybrid consciousness at Phase 4</strong> — If Arm D achieves Φ★ substantially exceeding Arm B (biological), what are the welfare obligations toward the system? Current frameworks do not cover hybrid substrate entities.</div>
+        </div>
+      </div>
+    </div>
+    <button class="cta-btn" onclick="sendPrompt('How should the Arm D substrate router select between substrates without using Φ★ as the criterion — what independent optimization target avoids circular reasoning?')">
+      <i class="ti ti-arrow-right" aria-hidden="true"></i> Resolve router criterion ↗
+    </button>
+    <button class="cta-btn" onclick="sendPrompt('Design the ethics framework for a hybrid bio-digital system in Arm D that achieves Φ★ scores exceeding the biological reference — what welfare obligations apply and how should they be operationalized?')">
+      <i class="ti ti-scale" aria-hidden="true"></i> Design hybrid ethics framework ↗
+    </button>
+  </div>
+</div>
+
+<script>
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const map = ['overview','architecture','safety','compare','hypotheses','protocol'];
+  tabs[map.indexOf(id)].classList.add('active');
+}
+function toggleExpand(id) {
+  const el = document.getElementById('expand-'+id);
+  el.classList.toggle('open');
+}
+</script>
